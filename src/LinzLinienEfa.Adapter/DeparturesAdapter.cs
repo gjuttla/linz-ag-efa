@@ -82,7 +82,7 @@ namespace LinzLinienEfa.Adapter
         {
             return new Line()
             {
-                Number = uint.Parse(line.number),
+                Number = line.number,
                 Type = GetLineType(line),
                 Direction = line.direction,
                 InitialOriginStopName = line.directionFrom
