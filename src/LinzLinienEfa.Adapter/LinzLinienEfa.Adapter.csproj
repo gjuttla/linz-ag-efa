@@ -4,6 +4,7 @@
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\LinzLinienEfa.Common\LinzLinienEfa.Common.csproj" />
+    <ProjectReference Include="..\LinzLinienEfa.Domain\LinzLinienEfa.Domain.csproj" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Flurl.Http" Version="2.1.1" />

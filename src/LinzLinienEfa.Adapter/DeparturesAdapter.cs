@@ -5,7 +5,7 @@ using Flurl;
 using Flurl.Http;
 using LinzLinienEfa.Common.Adapter;
 using LinzLinienEfa.Common.Configuration;
-using LinzLinienEfa.Common.Domain;
+using LinzLinienEfa.Domain;
 using Microsoft.Extensions.Options;
 
 namespace LinzLinienEfa.Adapter

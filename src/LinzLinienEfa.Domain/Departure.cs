@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace LinzLinienEfa.Common.Domain
+namespace LinzLinienEfa.Domain
 {
     public class Departure
     {

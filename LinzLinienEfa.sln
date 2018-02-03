@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinzLinienEfa.Adapter", "sr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinzLinienEfa.WebApi", "src\LinzLinienEfa.WebApi\LinzLinienEfa.WebApi.csproj", "{1E7BBBCF-9145-4D7E-AD24-6FE926430613}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinzLinienEfa.Domain", "src\LinzLinienEfa.Domain\LinzLinienEfa.Domain.csproj", "{205920F4-9309-4DF6-8AEE-9421BC4FF3F6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{1E7BBBCF-9145-4D7E-AD24-6FE926430613}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1E7BBBCF-9145-4D7E-AD24-6FE926430613}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1E7BBBCF-9145-4D7E-AD24-6FE926430613}.Release|Any CPU.Build.0 = Release|Any CPU
+		{205920F4-9309-4DF6-8AEE-9421BC4FF3F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{205920F4-9309-4DF6-8AEE-9421BC4FF3F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{205920F4-9309-4DF6-8AEE-9421BC4FF3F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{205920F4-9309-4DF6-8AEE-9421BC4FF3F6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
