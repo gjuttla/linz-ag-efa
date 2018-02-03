@@ -20,9 +20,8 @@ namespace LinzLinienEfa.WebApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
-            var appConfig = new AppConfig();
-            Configuration.GetSection("AppConfig").Bind(appConfig);
-            services.AddSingleton<IAppConfig>(appConfig);
+            services.AddOptions();
+            services.Configure<AppConfig>(Configuration.GetSection("AppConfig"));
             services.AddScoped<IStopsAdapter, StopsAdapter>();
             services.AddScoped<IDeparturesAdapter, DeparturesAdapter>();
         }

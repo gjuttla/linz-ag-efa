@@ -6,6 +6,7 @@ using Flurl.Http;
 using LinzLinienEfa.Common.Adapter;
 using LinzLinienEfa.Common.Configuration;
 using LinzLinienEfa.Common.Domain;
+using Microsoft.Extensions.Options;
 
 namespace LinzLinienEfa.Adapter
 {
@@ -13,9 +14,9 @@ namespace LinzLinienEfa.Adapter
     {
         private readonly IAppConfig appConfig;
 
-        public DeparturesAdapter(IAppConfig appConfig)
+        public DeparturesAdapter(IOptions<AppConfig> options)
         {
-            this.appConfig = appConfig;
+            this.appConfig = options.Value;
         }
         
         public Task<ICollection<Departure>> GetDeparturesForStopAsync(Stop stop, uint limit)

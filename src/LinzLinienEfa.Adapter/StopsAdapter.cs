@@ -7,6 +7,7 @@ using LinzLinienEfa.Common.Adapter;
 using LinzLinienEfa.Common.Configuration;
 using LinzLinienEfa.Common.Domain;
 using LinzLinienEfa.Common.Extensions;
+using Microsoft.Extensions.Options;
 
 namespace LinzLinienEfa.Adapter
 {
@@ -15,9 +16,9 @@ namespace LinzLinienEfa.Adapter
         private readonly IAppConfig appConfig;
         private readonly IEnumerable<string> stopNamePrefixesSorted;
         
-        public StopsAdapter(IAppConfig appConfig)
+        public StopsAdapter(IOptions<AppConfig> options)
         {
-            this.appConfig = appConfig;
+            this.appConfig = options.Value;
             stopNamePrefixesSorted = from prefix in appConfig.StopNameCityPrefixes orderby prefix.Length descending select prefix;
         }
         
