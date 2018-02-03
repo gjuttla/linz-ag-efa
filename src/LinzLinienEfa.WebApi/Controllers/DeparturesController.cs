@@ -1,5 +1,5 @@
 ﻿using System.Threading.Tasks;
-using LinzLinienEfa.Common.Adapter;
+using LinzLinienEfa.Service.Common;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LinzLinienEfa.WebApi.Controllers
@@ -8,11 +8,11 @@ namespace LinzLinienEfa.WebApi.Controllers
     {
         // Default limit according to EFA API documentation.
         private const uint DefaultLimit = 40;
-        private readonly IDeparturesAdapter departuresAdapter;
+        private readonly IDeparturesService departuresService;
 
-        public DeparturesController(IDeparturesAdapter departuresAdapter)
+        public DeparturesController(IDeparturesService departuresService)
         {
-            this.departuresAdapter = departuresAdapter;
+            this.departuresService = departuresService;
         }
         
         [HttpGet("api/departures/{stopId}")]
@@ -22,7 +22,7 @@ namespace LinzLinienEfa.WebApi.Controllers
             {
                 return BadRequest();
             }
-            var departures = await departuresAdapter.GetDeparturesForStopAsync(stopId, DefaultLimit);
+            var departures = await departuresService.GetDeparturesForStopAsync(stopId, DefaultLimit);
             if (departures.Count == 0)
             {
                 return NotFound();

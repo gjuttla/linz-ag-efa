@@ -1,16 +1,16 @@
 ﻿using System.Threading.Tasks;
-using LinzLinienEfa.Common.Adapter;
+using LinzLinienEfa.Service.Common;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LinzLinienEfa.WebApi.Controllers
 {
     public class StopsController : Controller
     {
-        private readonly IStopsAdapter stopsAdapter;
+        private readonly IStopsService stopsService;
 
-        public StopsController(IStopsAdapter stopsAdapter)
+        public StopsController(IStopsService stopsService)
         {
-            this.stopsAdapter = stopsAdapter;
+            this.stopsService = stopsService;
         }
         
         [HttpGet("api/stops/{name}")]
@@ -20,7 +20,7 @@ namespace LinzLinienEfa.WebApi.Controllers
             {
                 return BadRequest();
             }
-            var stops = await stopsAdapter.FindStopsByNameAsync(name);
+            var stops = await stopsService.FindStopsByNameAsync(name);
             if (stops.Count == 0)
             {
                 return NotFound();

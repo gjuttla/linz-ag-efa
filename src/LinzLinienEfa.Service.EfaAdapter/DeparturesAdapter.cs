@@ -3,19 +3,20 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Flurl;
 using Flurl.Http;
-using LinzLinienEfa.Common.Adapter;
 using LinzLinienEfa.Common.Configuration;
-using LinzLinienEfa.Common.Domain;
+using LinzLinienEfa.Domain;
+using LinzLinienEfa.Service.Common;
+using Microsoft.Extensions.Options;
 
-namespace LinzLinienEfa.Adapter
+namespace LinzLinienEfa.Service.EfaAdapter
 {
-    public class DeparturesAdapter : IDeparturesAdapter
+    public class DeparturesAdapter : IDeparturesService
     {
         private readonly IAppConfig appConfig;
 
-        public DeparturesAdapter(IAppConfig appConfig)
+        public DeparturesAdapter(IOptions<AppConfig> options)
         {
-            this.appConfig = appConfig;
+            this.appConfig = options.Value;
         }
         
         public Task<ICollection<Departure>> GetDeparturesForStopAsync(Stop stop, uint limit)

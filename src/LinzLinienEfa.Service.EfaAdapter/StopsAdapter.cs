@@ -3,21 +3,22 @@ using System.Linq;
 using System.Threading.Tasks;
 using Flurl;
 using Flurl.Http;
-using LinzLinienEfa.Common.Adapter;
 using LinzLinienEfa.Common.Configuration;
-using LinzLinienEfa.Common.Domain;
 using LinzLinienEfa.Common.Extensions;
+using LinzLinienEfa.Domain;
+using LinzLinienEfa.Service.Common;
+using Microsoft.Extensions.Options;
 
-namespace LinzLinienEfa.Adapter
+namespace LinzLinienEfa.Service.EfaAdapter
 {
-    public class StopsAdapter : IStopsAdapter
+    public class StopsAdapter : IStopsService
     {
         private readonly IAppConfig appConfig;
         private readonly IEnumerable<string> stopNamePrefixesSorted;
         
-        public StopsAdapter(IAppConfig appConfig)
+        public StopsAdapter(IOptions<AppConfig> options)
         {
-            this.appConfig = appConfig;
+            this.appConfig = options.Value;
             stopNamePrefixesSorted = from prefix in appConfig.StopNameCityPrefixes orderby prefix.Length descending select prefix;
         }
         
@@ -66,6 +67,6 @@ namespace LinzLinienEfa.Adapter
                 Id = point.stateless,
                 Name = (point.name as string).RemoveAnyPrefixes(stopNamePrefixesSorted).ReplaceAll(appConfig.Replacements)
             };
-        }        
+        }
     }
 }

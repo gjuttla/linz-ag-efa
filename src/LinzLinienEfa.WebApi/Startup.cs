@@ -1,6 +1,6 @@
-﻿using LinzLinienEfa.Adapter;
-using LinzLinienEfa.Common.Adapter;
-using LinzLinienEfa.Common.Configuration;
+﻿using LinzLinienEfa.Common.Configuration;
+using LinzLinienEfa.Service.Common;
+using LinzLinienEfa.Service.EfaAdapter;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -20,11 +20,10 @@ namespace LinzLinienEfa.WebApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
-            var appConfig = new AppConfig();
-            Configuration.GetSection("AppConfig").Bind(appConfig);
-            services.AddSingleton<IAppConfig>(appConfig);
-            services.AddScoped<IStopsAdapter, StopsAdapter>();
-            services.AddScoped<IDeparturesAdapter, DeparturesAdapter>();
+            services.AddOptions();
+            services.Configure<AppConfig>(Configuration.GetSection("AppConfig"));
+            services.AddScoped<IStopsService, StopsAdapter>();
+            services.AddScoped<IDeparturesService, DeparturesAdapter>();
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
