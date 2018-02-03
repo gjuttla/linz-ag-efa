@@ -2,9 +2,9 @@
 using System.Threading.Tasks;
 using LinzLinienEfa.Domain;
 
-namespace LinzLinienEfa.Common.Adapter
+namespace LinzLinienEfa.Service.Common
 {
-    public interface IStopsAdapter
+    public interface IStopsService
     {
         Task<ICollection<Stop>> FindStopsByNameAsync(string name);
     }

@@ -3,11 +3,11 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
-    <ProjectReference Include="..\LinzLinienEfa.Common\LinzLinienEfa.Common.csproj" />
-    <ProjectReference Include="..\LinzLinienEfa.Domain\LinzLinienEfa.Domain.csproj" />
-  </ItemGroup>
-  <ItemGroup>
     <PackageReference Include="Flurl.Http" Version="2.1.1" />
     <PackageReference Include="Microsoft.Extensions.Options" Version="2.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LinzLinienEfa.Common\LinzLinienEfa.Common.csproj" />
+    <ProjectReference Include="..\LinzLinienEfa.Service.Common\LinzLinienEfa.Service.Common.csproj" />
   </ItemGroup>
 </Project>

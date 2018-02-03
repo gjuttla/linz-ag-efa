@@ -12,7 +12,8 @@
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.0" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\LinzLinienEfa.Adapter\LinzLinienEfa.Adapter.csproj" />
     <ProjectReference Include="..\LinzLinienEfa.Common\LinzLinienEfa.Common.csproj" />
+    <ProjectReference Include="..\LinzLinienEfa.Service.Common\LinzLinienEfa.Service.Common.csproj" />
+    <ProjectReference Include="..\LinzLinienEfa.Service.EfaAdapter\LinzLinienEfa.Service.EfaAdapter.csproj" />
   </ItemGroup>
 </Project>
