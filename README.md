@@ -69,7 +69,7 @@ Returns a list of the next 40 (default from base API) departures from the given 
 ```
 
 ## License
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT license. See the [LICENSE](LICENSE) file for details.
 
 ## Acknowledgments
 The public transport [data](https://www.data.gv.at/katalog/dataset/9faa1734-607f-4bfd-b8c9-c5692bf37d55) by the city Linz is licensed under [CC BY 3.0 AT](https://creativecommons.org/licenses/by/3.0/at/deed.en).
