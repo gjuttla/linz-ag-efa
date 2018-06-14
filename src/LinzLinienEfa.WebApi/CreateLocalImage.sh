@@ -2,4 +2,4 @@
 
 dotnet restore
 dotnet publish -c Release -o out
-docker build -t linz-linien-efa-webapi -f Dockerfile.local .
+docker build -t linz-linien-efa-webapi .
