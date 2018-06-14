@@ -567,3 +567,6 @@ $RECYCLE.BIN/
 
 
 # End of https://www.gitignore.io/api/linux,macos,csharp,windows,intellij,visualstudio,visualstudiocode
+
+[Oo]ut/
+
